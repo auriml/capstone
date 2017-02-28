@@ -1,4 +1,6 @@
 # Predictor of eligibility in clinical trials on cancer
+Source code to train and validate two text classifier models - based on FastText vs Deep Learning using a 1-D Convolutional Neural Network with pretrained wordembeddings - on the corpus of cancer clinical trial protocols published in clinicaltrial.gov. The models classifies short free-text sentences (describing clinical information like medical history, concomitant medication, type and features of tumor, cancer therapy etc.)  as eligible or not eligible criterion to volunteer in clinical trials.  
+Both models are evaluated using cross-validation with k-folds = 5 on incremental sample sizes (1K, 10K, 100K, 1M samples) and on the largest balanced set (using undersampling) with 4.01 M classified samples available (from a total of 6 M samples) . 
 ## Installation
 ### The following dependencies need to be installed
 gensim                    0.13.4.1            
@@ -17,3 +19,17 @@ scipy                     0.18.1
 sklearn                   0.0                       
 tensorflow-gpu            1.0.0                    
 Theano                    0.8.2                    
+### Steps to Build the Models
+Note: Pregenerated sample files are available here  
+## 0. Download clinical trial protocols:
+## 1. Preprocessing: 
+### 1.1 Generate bigrams
+### 1.2 Generate wordembedings 
+### 1.3 Build and save on disk the dataset files
+## 2. Train and evaluate the models
+## 2.1 FastText classifier
+### 2.1.1 Run on single sample set
+### 2.1.2 Run cross-validation
+## 2.2 CNN text classifier
+### 2.2.1 Run on single sample set
+### 2.2.2 Run cross-validation
