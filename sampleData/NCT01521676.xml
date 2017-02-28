@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clinical_study rank="1">
+  <!-- This xml conforms to an XML Schema at:
+    https://clinicaltrials.gov/ct2/html/images/info/public.xsd -->
+  <required_header>
+    <download_date>ClinicalTrials.gov processed this data on January 24, 2017</download_date>
+    <link_text>Link to the current ClinicalTrials.gov record.</link_text>
+    <url>https://clinicaltrials.gov/show/NCT01521676</url>
+  </required_header>
+  <id_info>
+    <org_study_id>BC-BIO/IPC 2009-005</org_study_id>
+    <nct_id>NCT01521676</nct_id>
+  </id_info>
+  <brief_title>Predictive Clinical and Biological Parameters in Breast Cancer</brief_title>
+  <acronym>BC-BIO</acronym>
+  <official_title>Research of Predictive Clinical and Biological Parameters in Breast Cancer</official_title>
+  <sponsors>
+    <lead_sponsor>
+      <agency>Institut Paoli-Calmettes</agency>
+      <agency_class>Other</agency_class>
+    </lead_sponsor>
+  </sponsors>
+  <source>Institut Paoli-Calmettes</source>
+  <oversight_info>
+    <has_dmc>No</has_dmc>
+  </oversight_info>
+  <brief_summary>
+    <textblock>
+      Research of predictive clinical and biological factors in breast cancer :
+
+      genomic, proteomic, mutation
+    </textblock>
+  </brief_summary>
+  <overall_status>Recruiting</overall_status>
+  <start_date>December 2010</start_date>
+  <completion_date type="Anticipated">December 2026</completion_date>
+  <primary_completion_date type="Anticipated">December 2016</primary_completion_date>
+  <phase>N/A</phase>
+  <study_type>Interventional</study_type>
+  <has_expanded_access>No</has_expanded_access>
+  <study_design_info>
+    <intervention_model>Single Group Assignment</intervention_model>
+    <primary_purpose>Basic Science</primary_purpose>
+    <masking>Open Label</masking>
+  </study_design_info>
+  <primary_outcome>
+    <measure>molecular alteration in breast cancer</measure>
+    <time_frame>average of 4 weeks after diagnosis</time_frame>
+    <description>gene expression level</description>
+  </primary_outcome>
+  <secondary_outcome>
+    <measure>relation between molecular alteration and clinical and histological characteristics</measure>
+    <time_frame>up to 3 years</time_frame>
+    <description>hazard ratio between molecular alteration and clinical and histological characteristics</description>
+  </secondary_outcome>
+  <number_of_arms>1</number_of_arms>
+  <enrollment type="Anticipated">750</enrollment>
+  <condition>Breast Cancer</condition>
+  <arm_group>
+    <arm_group_label>breast cancer</arm_group_label>
+    <arm_group_type>Experimental</arm_group_type>
+    <description>blood and tumor sample</description>
+  </arm_group>
+  <intervention>
+    <intervention_type>Genetic</intervention_type>
+    <intervention_name>molecular alteration</intervention_name>
+    <description>research of molecular alteration</description>
+    <arm_group_label>breast cancer</arm_group_label>
+  </intervention>
+  <eligibility>
+    <criteria>
+      <textblock>
+        Inclusion Criteria:
+
+          -  breast cancer
+
+          -  age &gt; 18
+
+          -  signed informed consent
+
+        Exclusion Criteria:
+
+          -  emergency
+      </textblock>
+    </criteria>
+    <gender>All</gender>
+    <minimum_age>18 Years</minimum_age>
+    <maximum_age>N/A</maximum_age>
+    <healthy_volunteers>No</healthy_volunteers>
+  </eligibility>
+  <overall_official>
+    <last_name>Carole TARPIN, MD</last_name>
+    <role>Principal Investigator</role>
+    <affiliation>Institut Paoli-Calmettes</affiliation>
+  </overall_official>
+  <overall_contact>
+    <last_name>Dominique GENRE, MD</last_name>
+    <phone>33491223778</phone>
+    <email>drci.up@ipc.unicancer.fr</email>
+  </overall_contact>
+  <overall_contact_backup>
+    <last_name>Jihane PAKRADOUNI, PharmD PhD</last_name>
+    <phone>33491223778</phone>
+    <email>drci.up@ipc.unicancer.fr</email>
+  </overall_contact_backup>
+  <location>
+    <facility>
+      <name>Institut Paoli Calmettes</name>
+      <address>
+        <city>Marseille</city>
+        <zip>13009</zip>
+        <country>France</country>
+      </address>
+    </facility>
+    <status>Recruiting</status>
+    <contact>
+      <last_name>Carole TARPIN, MD</last_name>
+      <phone>33491223778</phone>
+      <email>drci.up@ipc.unicancer.fr</email>
+    </contact>
+    <investigator>
+      <last_name>Carole TARPIN, MD</last_name>
+      <role>Principal Investigator</role>
+    </investigator>
+  </location>
+  <location>
+    <facility>
+      <name>Hôpital Sainte-Musse</name>
+      <address>
+        <city>Toulon</city>
+        <country>France</country>
+      </address>
+    </facility>
+    <status>Recruiting</status>
+    <contact>
+      <last_name>Frédéric VIRET, MD</last_name>
+      <email>frederic.viret@ch-toulon.fr</email>
+    </contact>
+  </location>
+  <location_countries>
+    <country>France</country>
+  </location_countries>
+  <link>
+    <url>http://www.institutpaolicalmettes.fr</url>
+    <description>official web site of the sponsor</description>
+  </link>
+  <verification_date>October 2016</verification_date>
+  <lastchanged_date>October 26, 2016</lastchanged_date>
+  <firstreceived_date>December 22, 2011</firstreceived_date>
+  <responsible_party>
+    <responsible_party_type>Sponsor</responsible_party_type>
+  </responsible_party>
+  <keyword>breast cancer</keyword>
+  <condition_browse>
+    <!-- CAUTION:  The following MeSH terms are assigned with an imperfect algorithm  -->
+    <mesh_term>Breast Neoplasms</mesh_term>
+  </condition_browse>
+  <!-- Results have not yet been posted for this study                                -->
+</clinical_study>

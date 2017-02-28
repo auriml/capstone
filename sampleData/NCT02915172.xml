@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clinical_study>
+  <!-- This xml conforms to an XML Schema at:
+    https://clinicaltrials.gov/ct2/html/images/info/public.xsd -->
+  <required_header>
+    <download_date>ClinicalTrials.gov processed this data on January 26, 2017</download_date>
+    <link_text>Link to the current ClinicalTrials.gov record.</link_text>
+    <url>https://clinicaltrials.gov/show/NCT02915172</url>
+  </required_header>
+  <id_info>
+    <org_study_id>2016-0323</org_study_id>
+    <nct_id>NCT02915172</nct_id>
+  </id_info>
+  <brief_title>Lenvatinib and Capecitabine in Patients With Advanced Malignancies</brief_title>
+  <official_title>A Phase I Trial of Lenvatinib (Multi-kinase Inhibitor) and Capecitabine (Anti-metabolite) in Patients With Advanced Malignancies</official_title>
+  <sponsors>
+    <lead_sponsor>
+      <agency>M.D. Anderson Cancer Center</agency>
+      <agency_class>Other</agency_class>
+    </lead_sponsor>
+    <collaborator>
+      <agency>Eisai Inc.</agency>
+      <agency_class>Industry</agency_class>
+    </collaborator>
+  </sponsors>
+  <source>M.D. Anderson Cancer Center</source>
+  <oversight_info>
+    <has_dmc>No</has_dmc>
+  </oversight_info>
+  <brief_summary>
+    <textblock>
+      There are 2 phases in this study: Phase 1 (dose escalation) and Phase 2 (dose expansion).
+
+      The goal of Phase 1 of this clinical research study is to find the highest tolerable dose of
+      lenvatinib and Xeloda (capecitabine) that can be given to patients with advanced cancer. The
+      goal of Phase 2 of this study is to learn if the dose of lenvatinib and capecitabine found
+      in Phase 1 can help to control advanced cancer.
+
+      The safety of this drug combination will be studied in both phases of the study.
+    </textblock>
+  </brief_summary>
+  <detailed_description>
+    <textblock>
+      Study Groups:
+
+      If participant is are found to be eligible to take part in this study, they will be assigned
+      to a study group based on when they join this study. Up to 4 groups of up to 18 participants
+      will be enrolled in Phase 1 of the study, and up to 28 participants will be enrolled in
+      Phase 2.
+
+      If participant is enrolled in Phase 1, the dose of lenvatinib they receive will depend on
+      when they join this study. The first group of participants will receive the lowest dose
+      level of lenvatinib. Each new group will receive a higher dose of lenvatinib than the group
+      before it, if no intolerable side effects were seen. This will continue until the highest
+      tolerable dose of lenvatinib is found.
+
+      If participant is enrolled in Phase 2, they will receive lenvatinib at the highest dose that
+      was tolerated in Phase 1.
+
+      All participants will receive the same dose of capecitabine.
+
+      Study Drug Administration:
+
+      Each study cycle is 21 days.
+
+      Participant will take lenvatinib by mouth every day and capecitabine by mouth 2 times every
+      day.
+
+      Length of Study Participation:
+
+      Participant may continue taking the study drugs for as long as the doctor thinks it is in
+      their best interest. Participant will no longer be able to take the study drugs if the
+      disease gets worse, if intolerable side effects occur, or if they are unable to follow study
+      directions.
+
+      Patient's participation on the study will be over after the end-of-study visit (described
+      below).
+
+      Study Visits:
+
+      During Week 2 of Cycle 1:
+
+        -  Participant will have a physical exam.
+
+        -  Blood (about 3 teaspoons) will be drawn for routine tests.
+
+        -  If participant is enrolled in Phase 2, they will have a tumor biopsy for biomarker
+           testing.
+
+        -  If participant is enrolled in Phase 2, blood (about 2 teaspoons) will be drawn for
+           biomarker, CTC, and cfDNA testing.
+
+      During Week 3 of Cycle 1, blood (about 3 teaspoons) will be drawn for routine tests.
+
+      During Week 1 of Cycles 2 and beyond:
+
+        -  Participant will have a physical exam.
+
+        -  Blood (about 3 teaspoons) will be drawn for routine tests.
+
+        -  If participant is enrolled in Phase 2, blood (about 2 teaspoons) will be drawn for
+           biomarker, CTC, and cfDNA testing.
+
+        -  If participant can become pregnant, blood (about 1 teaspoon) will be collected for a
+           pregnancy test.
+
+      During Weeks 2 and 3 of Cycles 2 and beyond, participant will be called by a member of the
+      study staff and asked about any side effects they may have. This call should last about 5-10
+      minutes.
+
+      During Week 3 of Cycle 2 and then every even-numbered cycle after that (Cycles 4, 6, 8, and
+      so on), participant will have a CT scan or MRI.
+
+      End-of-Study Visit:
+
+      After participant's last dose of study drug, they will have an end-of-study visit. At this
+      visit, the following tests and procedures will be performed:
+
+        -  Participant will have a physical exam.
+
+        -  Blood (about 3 teaspoons) will be drawn for routine tests.
+
+        -  Participant will have a CT scan or MRI to check the status of the disease.
+
+        -  If participant can become pregnant, blood (about 1 teaspoon) or urine will be collected
+           for a pregnancy test.
+
+        -  If participant is enrolled in Phase 2, blood (about 2 teaspoons) will be drawn for
+           biomarker, CTC, and cfDNA testing.
+
+      This is an investigational study. Lenvatinib is FDA approved and commercially available for
+      the treatment of certain types of thyroid cancer. Capecitabine is FDA approved and
+      commercially available for the treatment of certain types of breast and colorectal cancers.
+      It is considered investigational to use lenvatinib and capecitabine to treat advanced
+      cancer.
+
+      The study doctor can explain how the study drugs are designed to work.
+
+      Up to 46 participants will be enrolled in this study. All will take part at MD Anderson.
+    </textblock>
+  </detailed_description>
+  <overall_status>Not yet recruiting</overall_status>
+  <start_date>December 2016</start_date>
+  <primary_completion_date type="Anticipated">December 2022</primary_completion_date>
+  <phase>Phase 1</phase>
+  <study_type>Interventional</study_type>
+  <has_expanded_access>No</has_expanded_access>
+  <study_design_info>
+    <intervention_model>Single Group Assignment</intervention_model>
+    <primary_purpose>Treatment</primary_purpose>
+    <masking>Open Label</masking>
+  </study_design_info>
+  <primary_outcome>
+    <measure>Maximum Tolerated Dose (MTD) of Combination Treatment with Lenvatinib and Capecitabine in Advanced and/or Metastatic Cancer Refractory to Standard Treatment</measure>
+    <time_frame>3 weeks</time_frame>
+    <description>MTD defined by dose limiting toxicities (DLTs) that occur in the first cycle. DLT defined as any clinically grade 3 or 4 non-hematologic toxicity as defined in the NCI CTC v4.0,</description>
+  </primary_outcome>
+  <secondary_outcome>
+    <measure>Antitumor Efficacy of Combination of Lenvatinib and Capecitabine in Breast Cancer and Solid Tumors with FGFR Abnormality</measure>
+    <time_frame>42 days</time_frame>
+    <description>Efficacy evaluation done using RECIST criteria version 1.1.</description>
+  </secondary_outcome>
+  <number_of_arms>1</number_of_arms>
+  <enrollment type="Anticipated">46</enrollment>
+  <condition>Advanced Cancer</condition>
+  <condition>Malignant Neoplasm of Breast</condition>
+  <condition>Malignant Neoplasms of Bone and Articular Cartilage</condition>
+  <condition>Malignant Neoplasms of Digestive Organs</condition>
+  <condition>Malignant Neoplasms of Eye Brain and Other Parts of Central Nervous System</condition>
+  <condition>Malignant Neoplasms of Female Genital Organs</condition>
+  <condition>Malignant Neoplasms of Ill-defined Secondary and Unspecified Sites</condition>
+  <condition>Malignant Neoplasms of Independent (Primary) Multiple Sites</condition>
+  <condition>Malignant Neoplasms of Lip Oral Cavity and Pharynx</condition>
+  <condition>Malignant Neoplasms of Male Genital Organs</condition>
+  <condition>Malignant Neoplasms of Mesothelial and Soft Tissue</condition>
+  <condition>Malignant Neoplasms of Respiratory and Intrathoracic Organs</condition>
+  <condition>Malignant Neoplasms of Thyroid and Other Endocrine Glands</condition>
+  <condition>Malignant Neoplasms of Urinary Tract</condition>
+  <arm_group>
+    <arm_group_label>Lenvatinib + Capecitabine</arm_group_label>
+    <arm_group_type>Experimental</arm_group_type>
+    <description>Phase 1 Study Escalation: Group consists of participants with various solid tumors.
+Dose of Lenvatinib received depends on when joining study. First group of participants receive lowest dose level of Lenvatinib. Each new group receives a higher dose of Lenvatinib than the group before it, if no intolerable side effects were seen. This continues until highest tolerable dose of Lenvatinib found.
+All participants receive the same dose of Capecitabine.
+Phase 2 Study Expansion: Group consists of participants with advanced breast cancer and any solid tumors with confirmed FGFR abnormalities.
+Participants receive Lenvatinib at the highest dose that was tolerated in Dose Escalation Phase.
+All participants receive the same dose of Capecitabine.</description>
+  </arm_group>
+  <intervention>
+    <intervention_type>Drug</intervention_type>
+    <intervention_name>Lenvatinib</intervention_name>
+    <description>Phase 1 Dose Escalation: Starting dose of Lenvatinib 10 mg by mouth once daily of a 21 day cycle.
+Phase 2 Dose Expansion: Starting dose of Lenvatinib is maximum tolerated dose from Phase 1.</description>
+    <arm_group_label>Lenvatinib + Capecitabine</arm_group_label>
+    <other_name>E7080</other_name>
+    <other_name>Lenvima</other_name>
+  </intervention>
+  <intervention>
+    <intervention_type>Drug</intervention_type>
+    <intervention_name>Capecitabine</intervention_name>
+    <description>Phase 1 Dose Escalation and Phase 2 Dose Expansion: Capecitabine 1000 mg/m2 twice daily by mouth on Days 1 - 14 of a 21 day cycle.</description>
+    <arm_group_label>Lenvatinib + Capecitabine</arm_group_label>
+    <other_name>Xeloda</other_name>
+  </intervention>
+  <eligibility>
+    <criteria>
+      <textblock>
+        Inclusion Criteria:
+
+          1. Patients with a histologically and/or cytologically confirmed solid tumor who are
+             resistant / refractory to approved therapies or for whom no curative therapies are
+             available.
+
+          2. All previous treatment (including surgery, radiotherapy and systemic anti-neoplastic
+             therapy) must have been completed at least three weeks prior to study entry and any
+             acute toxicities must have resolved.
+
+          3. Aged &gt;/= 18 years.
+
+          4. Eastern Cooperative Oncology Group (ECOG) performance status score of &lt;/= 2.
+
+          5. Written informed consent prior to any study specific screening procedures with the
+             understanding that the patient may withdraw consent at any time without prejudice.
+
+          6. Willing and able to comply with the protocol guidelines for the duration of the
+             study.
+
+        Exclusion Criteria:
+
+          1. Unstable metastases to the central nervous system (CNS).
+
+          2. Any of the following laboratory parameters: a) hemoglobin &lt; 9 g/dL (5.6 mmol/L); b)
+             neutrophils &lt;1.5 x 109/L; c) platelets &lt;100 x 109/L; d) serum bilirubin &gt;25 µmol/L
+             (1.5 mg/dL); e) liver function tests with values &gt;3 x upper limit of normal (ULN) f)
+             serum creatinine &gt;1.5 x ULN or creatinine clearance &lt; 60 mL/minute
+
+          3. Positive history of HIV, active hepatitis B or active hepatitis C or
+             severe/uncontrolled intercurrent illness or infection
+
+          4. Centrally located non-small cell lung cancers and squamous cell lung cancers
+
+          5. Clinically significant cardiac impairment or unstable ischemic heart disease
+             including a myocardial infarction within six months of study start
+
+          6. Patients with marked Baseline prolongation of QT/QTc interval (QTc interval &gt; 450
+             msec for males or &gt; 470 msec for females) using the Fridericia method for QTc
+             analysis
+
+          7. Bleeding or thrombotic disorders, or using therapeutic dosages of anticoagulants,
+             such as warfarin. Occasional use of NSAIDs and antiplatelet agents such as aspirin,
+             clopidogrel, aggrenox and dipyridamole are not considered exclusionary if taken &lt;7
+             days per 28 days. However, if the patient requires chronic use (&gt;/=7 days out of 28
+             days) of full doses of aspirin or NSAIDs then the patient is excluded.
+
+          8. Requirement for chronic use of full dose aspirin or non-steroidal anti-inflammatory
+             drugs (NSAIDs)
+
+          9. Poorly controlled hypertension (defined as requiring changes in any hypertensive
+             regimen within 1 week of study entry) or patients diagnosed with hypertension based
+             on repeat blood pressure measurements of &gt;160/90 mmHg at Screening
+
+         10. Proteinuria &gt; 1+ on urine dipstick testing or 30 mg/dL
+
+         11. A history of gastrointestinal malabsorption or having undergone surgery requiring
+             gastrointestinal anastomoses within four weeks of starting therapy or who have not
+             recovered from major surgery within three weeks of starting therapy
+
+         12. History of alcoholism, drug addiction, or any psychiatric or psychological condition
+             which, in the opinion of the Investigator, would impair study compliance.
+
+         13. Any treatment with investigational drugs within 30 days before the start of the study
+
+         14. Previous treatment with E7080
+
+         15. Women who are pregnant or breast-feeding; women of childbearing potential with a
+             positive pregnancy test at Screening or no pregnancy test. Women of childbearing
+             potential unless (1) surgically sterile or (2) using adequate measures of
+             contraception (including two forms of contraception, one of which must be a barrier
+             method) in the opinion of the Investigator. Perimenopausal women must be amenorrheic
+             for at least 12 months to be considered of non-childbearing potential.
+
+         16. Fertile males with female partners who are not willing to use contraception or whose
+             female partners are not using adequate contraceptive protection
+
+         17. Legal incapacity
+      </textblock>
+    </criteria>
+    <gender>All</gender>
+    <minimum_age>18 Years</minimum_age>
+    <maximum_age>N/A</maximum_age>
+    <healthy_volunteers>No</healthy_volunteers>
+  </eligibility>
+  <overall_official>
+    <last_name>David S. Hong, MD</last_name>
+    <role>Principal Investigator</role>
+    <affiliation>M.D. Anderson Cancer Center</affiliation>
+  </overall_official>
+  <overall_contact>
+    <last_name>David S. Hong, MD</last_name>
+    <phone>713-563-1930</phone>
+  </overall_contact>
+  <location>
+    <facility>
+      <name>University of Texas MD Anderson Cancer Center</name>
+      <address>
+        <city>Houston</city>
+        <state>Texas</state>
+        <zip>77030</zip>
+        <country>United States</country>
+      </address>
+    </facility>
+    <status>Not yet recruiting</status>
+  </location>
+  <location_countries>
+    <country>United States</country>
+  </location_countries>
+  <link>
+    <url>http://www.mdanderson.org</url>
+    <description>University of Texas MD Anderson Cancer Center Website</description>
+  </link>
+  <verification_date>September 2016</verification_date>
+  <lastchanged_date>September 23, 2016</lastchanged_date>
+  <firstreceived_date>September 23, 2016</firstreceived_date>
+  <responsible_party>
+    <responsible_party_type>Sponsor</responsible_party_type>
+  </responsible_party>
+  <keyword>Advanced Cancer</keyword>
+  <keyword>Malignant neoplasm of breast</keyword>
+  <keyword>Malignant neoplasms of bone and articular cartilage</keyword>
+  <keyword>Malignant neoplasms of digestive organs</keyword>
+  <keyword>Malignant neoplasms of eye brain and other parts of central nervous system</keyword>
+  <keyword>Malignant neoplasms of female genital organs</keyword>
+  <keyword>Malignant neoplasms of ill-defined secondary and unspecified sites</keyword>
+  <keyword>Malignant neoplasms of independent (primary) multiple sites</keyword>
+  <keyword>Malignant neoplasms of lip oral cavity and pharynx</keyword>
+  <keyword>Malignant neoplasms of male genital organs</keyword>
+  <keyword>Malignant neoplasms of mesothelial and soft tissue</keyword>
+  <keyword>Malignant neoplasms of respiratory and intrathoracic organs</keyword>
+  <keyword>Malignant neoplasms of thyroid and other endocrine glands</keyword>
+  <keyword>Malignant neoplasms of urinary tract</keyword>
+  <keyword>Lenvatinib</keyword>
+  <keyword>E7080</keyword>
+  <keyword>Lenvima</keyword>
+  <keyword>Capecitabine</keyword>
+  <keyword>Xeloda</keyword>
+  <condition_browse>
+    <!-- CAUTION:  The following MeSH terms are assigned with an imperfect algorithm  -->
+    <mesh_term>Neoplasms</mesh_term>
+    <mesh_term>Breast Neoplasms</mesh_term>
+    <mesh_term>Urologic Neoplasms</mesh_term>
+    <mesh_term>Thyroid Neoplasms</mesh_term>
+    <mesh_term>Bone Neoplasms</mesh_term>
+    <mesh_term>Cartilage Diseases</mesh_term>
+    <mesh_term>Soft Tissue Neoplasms</mesh_term>
+    <mesh_term>Neoplasms, Fibrous Tissue</mesh_term>
+    <mesh_term>Lip Neoplasms</mesh_term>
+    <mesh_term>Genital Neoplasms, Male</mesh_term>
+    <mesh_term>Eye Neoplasms</mesh_term>
+    <mesh_term>Genital Neoplasms, Female</mesh_term>
+  </condition_browse>
+  <intervention_browse>
+    <!-- CAUTION:  The following MeSH terms are assigned with an imperfect algorithm  -->
+    <mesh_term>Capecitabine</mesh_term>
+    <mesh_term>Lenvatinib</mesh_term>
+  </intervention_browse>
+  <!-- Results have not yet been posted for this study                                -->
+</clinical_study>
