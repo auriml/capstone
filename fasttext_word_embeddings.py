@@ -2,45 +2,45 @@ import fasttext
 import numpy as np
 
 
-#  -lr 0.025 -dim 100  -ws 5 -epoch 1 -minCount 5 -neg 5 -loss ns -bucket 2000000
-# -minn 3 -maxn 6 -thread 4 -t 1e-4 -lrUpdateRate 100
+
 
 data =  "./textData/words_data.csv"
 skipgram_fname = "./wordEmbeddings/vectorsFastText_skipgram_0"
 bow_fname = "./wordEmbeddings/vectorsFastText_bow"
-
+plot_filename = "tsne_relations.png"
 
 
 # Skipgram model
 #model = fasttext.skipgram(data, skipgram_fname, maxn = 0, silent = 0, epoch = 10, bucket = 2000000)
 
-#str(model.words)           # List of words in the dictionary
 
 
 # CBOW model
 #model = fasttext.cbow(data, skipgram_fname)
-#print(model.words) # list of words in dictionary
 
+
+#default values:
+#  -lr 0.025 -dim 100  -ws 5 -epoch 1 -minCount 5 -neg 5 -loss ns -bucket 2000000
+# -minn 3 -maxn 6 -thread 4 -t 1e-4 -lrUpdateRate 100
 
 model = fasttext.load_model('./wordEmbeddings/vectorsFastText_skipgram_0.bin')
-print(len(model.words))
+print("Number of word embeddings in the model: " + str(len(model.words)))
 #print(model.words) # list of words in dictionary
-print(model['patient'])      # get the vector of a word
-print(model.model_name)       # Model name
-#print(model.words )           # List of words in the dictionary
-print(model.dim)              # Size of word vector
-print(model.ws )              # Size of context window
-print(model.epoch )           # Number of epochs
-print(model.min_count )       # Minimal number of word occurences
-print(model.neg )             # Number of negative sampled
-print(model.word_ngrams )     # Max length of word ngram
-print(model.loss_name)        # Loss function name
-print(model.bucket)           # Number of buckets
-print(model.minn)             # Min length of char ngram
-print(model.maxn)             # Max length of char ngram
-print(model.lr_update_rate)   # Rate of updates for the learning rate
-print(model.t )               # Value of sampling threshold
-print(model.encoding)         # Encoding of the model
+print("get the vector of word 'patient': " + str(model['patient']))      # get the vector of a word
+print("Model name: " +model.model_name)       # Model name
+print("Size of word vector: " + str(model.dim))              # Size of word vector
+print("Size of context window: " + str(model.ws) )              # Size of context window
+print("Number of epochs: " + str(model.epoch) )           # Number of epochs
+print("Minimal number of word occurences: " + str(model.min_count) )       # Minimal number of word occurences
+print("Number of negative sampled: " + str(model.neg) )             # Number of negative sampled
+print("Max length of word ngram: " + str(model.word_ngrams) )     # Max length of word ngram
+print("Loss function name: " + str(model.loss_name))        # Loss function name
+print("Number of buckets: " + str(model.bucket))           # Number of buckets
+print("Min length of char ngram: " + str(model.minn))             # Min length of char ngram
+print("Max length of char ngram: " + str(model.maxn))             # Max length of char ngram
+print("Rate of updates for the learning rate: " + str(model.lr_update_rate))   # Rate of updates for the learning rate
+print("Value of sampling threshold: " + str(model.t) )               # Value of sampling threshold
+print("Encoding of the model: " + model.encoding)         # Encoding of the model
 
 
 #word space visualization
@@ -53,6 +53,13 @@ targets = ['tamoxifen', 'antiestrogen', 'fulvestrant', 'palbociclib','abemacicli
            'rectal', 'anal',  'sphincter',
            'hemoglobin', 'platelets',
            'bronchi', 'trachea', 'bronchus', 'breast']
+
+targets = ['fulvestrant', 'palbociclib','breast',
+           'nivolumab', 'cisplatin', 'lung',
+           'oxaliplatin', 'leucovorin', 'fluorouracil', 'colon',
+           'mitomycin', 'bladder',
+           'temozolamide', 'glioblastoma',
+           'ipilimumab', 'melanoma']
 
 #get the word vectors of these words
 X_target=[]
@@ -81,7 +88,7 @@ print(X_tsne.shape)
 
 # as we can not visualize all words, we
 # are only to represent the target words
-X_tsne_target = X_tsne[-28:,:]
+X_tsne_target = X_tsne[-len(targets):,:]
 print(X_tsne_target.shape)
 import matplotlib.pyplot as plt
 def plot_words(X, labels, classes=None, xlimits=None, ylimits=None):
@@ -101,7 +108,7 @@ def plot_words(X, labels, classes=None, xlimits=None, ylimits=None):
 # Step 6: Visualize the embeddings.
 
 
-def plot_with_labels(low_dim_embs, labels, filename='tsne1.png'):
+def plot_with_labels(low_dim_embs, labels, filename= plot_filename):
     assert low_dim_embs.shape[0] >= len(labels), "More labels than embeddings"
     plt.figure(figsize=(12, 12))  # in inches
     for i, label in enumerate(labels):

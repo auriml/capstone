@@ -15,9 +15,9 @@ dataDirectory  =  '/Users/aureliabustos/Downloads/search_result/'
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
 #generate word vectors
-bigram = Phrases.load("bigrams")
-print("Starting to generate word vectors using gensim and bigrams")
-sentences = MySentences(dataDirectory, bigram) # a memory-friendly iterator
+#bigram = Phrases.load("bigrams")
+print("Starting to generate word vectors using gensim w/o bigrams")
+sentences = MySentences(dataDirectory) # a memory-friendly iterator
 model = gensim.models.Word2Vec(sentences, min_count=5)
 model.save(fname)
 print("end")

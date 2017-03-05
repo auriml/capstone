@@ -117,7 +117,7 @@ def clean(text, convertnum2words = False, removeSingles = False):
     return text
 
 class MySentences(object):
-    def __init__(self, dirname, bigrams):
+    def __init__(self, dirname, bigrams = None):
         self.dirname = dirname
         self.bigrams = bigrams
 
@@ -344,7 +344,7 @@ print("Starting to process eligibility criteria and extracts criteria sentences 
 
 #extracts criteria by  treatment, eligibility and conditions (replace bigrams)
 print("Starting to process eligibility criteria and extracts criteria sentences by treatment, eligibility and conditions (replace bigrams)")
-to_csv("./textData/dataWithConditions_no_bigrams.csv", bigrams = False, conditions = True )
+#CHOOSE: to_csv("./textData/dataWithConditions_no_bigrams.csv", bigrams = False, conditions = True )
 
 # nciNER for intervention_name field
 print("Starting to do NER for intervention_name using nciThesaurus ")
@@ -357,14 +357,14 @@ print("Appending nci intervention classes to data")
 
 #generate labeled criteria with FastText format
 print("Generate labeled criteria from processed criteria with FastText format")
-toFastText_format(source_csv = './textData/dataWithConditions_no_bigrams.csv', fname = "./textData/labeledEligibilityFastText_no_bigrams.csv",labeledField = "eligible")
+#CHOOSE: toFastText_format(source_csv = './textData/dataWithConditions_no_bigrams.csv', fname = "./textData/labeledEligibilityFastText_no_bigrams.csv",labeledField = "eligible")
 #toFastText_format(source_csv = './textData/dataWithConditions.csv', fname = "./textData/labeledInterventionFastText.csv", labeledField = "intervention_name", otherFields = ["condition","eligibility", "eligible" ])
 #toFastText_format(source_csv = './textData/dataWithInterventionClass.csv', fname = "./textData/labeledInterventionClassFastText.csv", labeledField = "intervention_class", otherFields = ["condition","eligibility", "eligible" ])
 
 
 #generate plain words file needed for wordembeddings
 print("Starting to generate a file containing all criteria transformed in a unique sequence of utf8  words separated by spaces ")
-text2words_to_csv(dataDirectory, "./textData/words_data_no_bigrams.csv", bigrams = False)
+#CHOOSE: text2words_to_csv(dataDirectory, "./textData/words_data_no_bigrams.csv", bigrams = False)
 
 
 

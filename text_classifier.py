@@ -18,8 +18,8 @@ BASE_DIR = '.'
 VE_DIR = BASE_DIR + '/wordEmbeddings/'
 VE_FNAME = 'vectorsFastText.vec'
 TEXT_DATA_DIR = BASE_DIR + '/textData/'
-TEXT_DATA_FNAME = 'labeledEligibilityFastText.csv'
-#TEXT_DATA_FNAME = 'labeledEligibilitySample'
+#TEXT_DATA_FNAME = 'labeledEligibilityFastText.csv'
+TEXT_DATA_FNAME = 'labeledEligibilitySample'
 RESULT_DIR = BASE_DIR + '/classifiers/'
 RESULT_FNAME = 'model_custom_CNN'
 MAX_NB_WORDS = 20000
@@ -32,7 +32,7 @@ VALIDATION_SPLIT = 0.2
 def sequences_generator(seq, lab, max_sequence_length):
     my_list_len = len(lab)
     print("Generator length:" , my_list_len )
-    batch_size = 10
+    batch_size = 128
     num_batches = int(my_list_len/batch_size)
     from sklearn.utils import shuffle
     while True:
@@ -211,9 +211,9 @@ def run_classifier(size = None):
 
 
 
-scoresT, scoresV = run_classifier()
-#train_sizes = [1000, 10000, 100000, 1000000]
-train_sizes = []
+#scoresT, scoresV = run_classifier()
+train_sizes = [1000, 10000, 100000, 1000000]
+#train_sizes = []
 train_scores_mean = []
 train_scores_std = []
 test_scores_mean = []

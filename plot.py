@@ -1,5 +1,8 @@
 __author__ = 'aureliabustos'
 
+
+import matplotlib
+matplotlib.use('Agg') # Must be before importing matplotlib.pyplot or pylab!
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -41,6 +44,6 @@ def plot_learning_curve(title,ylim=None, train_sizes = None, logX = False, train
 
 
     plt.legend(loc="best")
-    plt.savefig("plot_CNN")
+    plt.savefig("plot_trainig_val.png")
 
 
