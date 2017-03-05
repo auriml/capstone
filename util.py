@@ -5,7 +5,7 @@ import numpy as np
 
 
 
-data =  "./textData/labeledEligibilityFastText.csv"
+data =  "./textData/labeledEligibility.csv"
 
 
 def balanced_subsample(y, size=None):

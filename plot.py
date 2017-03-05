@@ -44,6 +44,6 @@ def plot_learning_curve(title,ylim=None, train_sizes = None, logX = False, train
 
 
     plt.legend(loc="best")
-    plt.savefig("plot_trainig_val.png")
+    plt.savefig(title + "_plot.png")
 
 

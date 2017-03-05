@@ -17,22 +17,34 @@ readline                  6.2
 scikit-learn              0.18.1                    
 scipy                     0.18.1          
 sklearn                   0.0                       
-tensorflow-gpu            1.0.0                    
-Theano                    0.8.2                    
+tensorflow-gpu            1.0.0    (note: GPU installation is optional, but highly recommended to train the CNN model in less than 3 hours)                
+                    
 ### Steps to Build the Models
-Note: Pregenerated subsample file with 1M samples is available for download in https://www.kaggle.com/auriml/eligibilityforcancerclinicaltrials  
-If the pregenerated dataset is used then proceed directly to step 2, otherwise, to build a new dataset from scratch proceed to step 0
+Note: A pregenerated subsample file with 1M samples and 186 MB is available for download in https://www.kaggle.com/auriml/eligibilityforcancerclinicaltrials  
+If the pregenerated subsample dataset is used rename it and save it as './textData/labeledEligibility.csv' and proceed directly to step 2, otherwise, to build a new dataset from scratch proceed to step 0
 ## 0. Download clinical trial protocols:
 https://clinicaltrials.gov/ct2/results?term=neoplasm&type=Intr&show_down=Y
-Size of file: 1.28 GB
+Size of folder "search_result": 1.28 GB
 ## 1. Preprocessing: 
 ### 1.1 Generate bigrams
-### 1.2 Generate wordembedings 
-### 1.3 Build and save on disk the dataset files
+```python preprocessor.py -b '<pathTo>/search_result/'```
+### 1.2 Build and save on disk the dataset file with labeled clinical statements
+```python preprocessor.py -l ```
+### 1.3 Train word2vects
+#### 1.3.1 Using FasText
+```python preprocessor.py -w ```
+```python fasttext_word_embeddings.py```
+##### 1.3.1 Using Gensim
+```python gensim_word_embeddings.py -w '<pathTo>/search_result/'```
 ## 2. Train and evaluate the models
 ## 2.1 FastText classifier
-### 2.1.1 Run on single sample set
-### 2.1.2 Run cross-validation
+### 2.1.1 Run cross-validation using sample sizes = [1000, 10000, 100000, 1000000]
+Make sure that exists the file ./textData/labeledEligibility.csv
+```python fasttext_text_classifier.py ```
+The learning curves are saved in ./Learning_Curves_FastText_Classifier_plot.png
 ## 2.2 CNN text classifier
-### 2.2.1 Run on single sample set
-### 2.2.2 Run cross-validation
+### 2.2.2 Run cross-validation using sample sizes = [1000, 10000, 100000, 1000000]
+Make sure that exists the file ./textData/labeledEligibility.csv
+Using tensorflow-gpu it takes aprox 3 hours to train.
+```python text_classifier.py ```
+The learning curves are saved in ./Learning_Curves_CNN_Classifier_plot.png

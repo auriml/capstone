@@ -151,8 +151,10 @@ def generateBigrams(sentences):
 
 
 #generate a file of plain utf words separated by a single space needed as input to wordembeddings
-def text2words_to_csv(dataDirectory, fname, bigrams = True):
-
+def text2words_to_csv(dataDirectory, fname, bigrams = False):
+    bigram = False
+    if bigrams:
+        bigram = Phrases.load("bigrams")
     for filename in os.listdir(dataDirectory):
         if filename.endswith(".xml"):
             fd = open(fname,'a')
@@ -162,7 +164,7 @@ def text2words_to_csv(dataDirectory, fname, bigrams = True):
                 for line  in sentencesSplitter(eligibility['eligibility']):
                     line = clean(line, convertnum2words=True, removeSingles=False)
                     if bigrams:
-                        line =  bigrams[line.split()]
+                        line =  bigram[line.split()]
                     fd.write(" ".join(line) + " ")
 
             fd.close()
@@ -170,7 +172,9 @@ def text2words_to_csv(dataDirectory, fname, bigrams = True):
 #generate processed eligibility criteria sentences classified by exclusion/inclusion and by treatment
 #optional add conditions to criterion
 def to_csv(fname, bigrams = False, conditions=False,  fields=['eligibility','intervention_name','condition']):
-
+    bigram = False
+    if bigrams:
+        bigram = Phrases.load("bigrams")
 
 
     keys = False
@@ -216,7 +220,7 @@ def to_csv(fname, bigrams = False, conditions=False,  fields=['eligibility','int
 
                     #insert bigrams
                     if bigrams:
-                        line =  bigrams[line.split()]
+                        line =  bigram[line.split()]
                         line = ' '.join(line)
 
                     # single character removal
@@ -336,10 +340,7 @@ def appendProcesssedFieldToCsv(source_csv = './textData/data.csv', fname = './te
 #print("Starting to process eligibility criteria and extracts criteria sentences by treatment and eligibility (replace bigrams)")
 #to_csv("./textData/data.csv", bigrams = bigram )
 
-#extracts criteria by  treatment, eligibility and conditions (replace bigrams)
-print("Starting to process eligibility criteria and extracts criteria sentences by treatment, eligibility and conditions (replace bigrams)")
-#CHOOSE: to_csv("./textData/dataWithConditions_no_bigrams.csv", bigrams = False, conditions = True )
-
+#TODO:NOT YET FINISHED - NOT INCLUDED IN CAPSTONE#
 # nciNER for intervention_name field
 #print("Starting to do NER for intervention_name using nciThesaurus ")
 #nciThesaurusNER(source_csv = './textData/data.csv', fname = './textData/intervention_index.csv' ,field = 'intervention_name')
@@ -349,21 +350,9 @@ print("Starting to process eligibility criteria and extracts criteria sentences 
 #appendProcesssedFieldToCsv(source_csv = './textData/dataWithConditions.csv', fname = './textData/dataWithInterventionClass.csv',  dic_csv ='./textData/intervention_index.csv', new_fieldName = 'intervention_class' , source_fieldName = 'intervention_name')
 
 
-#generate labeled criteria with FastText format
-print("Generate labeled criteria from processed criteria with FastText format")
-#CHOOSE: toFastText_format(source_csv = './textData/dataWithConditions_no_bigrams.csv', fname = "./textData/labeledEligibilityFastText_no_bigrams.csv",labeledField = "eligible")
-#toFastText_format(source_csv = './textData/dataWithConditions.csv', fname = "./textData/labeledInterventionFastText.csv", labeledField = "intervention_name", otherFields = ["condition","eligibility", "eligible" ])
-#toFastText_format(source_csv = './textData/dataWithInterventionClass.csv', fname = "./textData/labeledInterventionClassFastText.csv", labeledField = "intervention_class", otherFields = ["condition","eligibility", "eligible" ])
-
-
-#generate plain words file needed for wordembeddings
-print("Starting to generate a file containing all criteria transformed in a unique sequence of utf8  words separated by spaces ")
-#CHOOSE: text2words_to_csv(dataDirectory, "./textData/words_data_no_bigrams.csv", bigrams = False)
-
-
 import sys, getopt
 # Read command line args
-myopts, args = getopt.getopt(sys.argv[1:],"b:l:w")
+myopts, args = getopt.getopt(sys.argv[1:],"b:lw")
 
 ###############################
 # o == option
@@ -382,9 +371,19 @@ for o, a in myopts:
     elif o == '-l':
         #extracts criteria by  treatment, eligibility and conditions (replace bigrams)
         print("Starting to process eligibility criteria and extracts criteria sentences by treatment, eligibility and conditions (replace bigrams)")
-        to_csv("./textData/dataWithConditions_no_bigrams.csv", bigrams = True, conditions = True )
+        to_csv("./textData/dataWithConditions.csv", bigrams = True, conditions = True )
+
+        #generate labeled criteria with FastText format
+        print("Generate labeled criteria from processed data with FastText format")
+        toFastText_format(source_csv = './textData/dataWithConditions.csv', fname = "./textData/labeledEligibility.csv",labeledField = "eligible")
+        #toFastText_format(source_csv = './textData/dataWithConditions.csv', fname = "./textData/labeledInterventionFastText.csv", labeledField = "intervention_name", otherFields = ["condition","eligibility", "eligible" ])
+        #toFastText_format(source_csv = './textData/dataWithInterventionClass.csv', fname = "./textData/labeledInterventionClassFastText.csv", labeledField = "intervention_class", otherFields = ["condition","eligibility", "eligible" ])
 
     elif o == '-w':
-        a=a
+        #generate plain words file needed for wordembeddings
+        print("Starting to generate a file containing all criteria transformed in a unique sequence of utf8  words separated by spaces ")
+        text2words_to_csv(dataDirectory, "./textData/words_data.csv", bigrams = True)
+
+
     else:
-        print("Usage: %s [-b] <dataDirectory> [-w] <dataDirectory>" % sys.argv[0])
+        print("Usage: %s [-b] <dataDirectory> [-l][-w] " % sys.argv[0])

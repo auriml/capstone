@@ -5,25 +5,25 @@ import numpy as np
 
 
 data =  "./textData/words_data.csv"
-skipgram_fname = "./wordEmbeddings/vectorsFastText_skipgram_0"
+skipgram_fname = "./wordEmbeddings/vectorsFastText"
 bow_fname = "./wordEmbeddings/vectorsFastText_bow"
 plot_filename = "tsne_relations.png"
 
 
 # Skipgram model
-#model = fasttext.skipgram(data, skipgram_fname, maxn = 0, silent = 0, epoch = 10, bucket = 2000000)
+model = fasttext.skipgram(data, skipgram_fname, ws = 5, minn = 3 ,maxn = 6, silent = 0, epoch = 10, bucket = 2000000)
 
 
 
 # CBOW model
-#model = fasttext.cbow(data, skipgram_fname)
+#model = fasttext.cbow(data, bow_fname)
 
 
 #default values:
 #  -lr 0.025 -dim 100  -ws 5 -epoch 1 -minCount 5 -neg 5 -loss ns -bucket 2000000
 # -minn 3 -maxn 6 -thread 4 -t 1e-4 -lrUpdateRate 100
 
-model = fasttext.load_model('./wordEmbeddings/vectorsFastText_skipgram_0.bin')
+model = fasttext.load_model('./wordEmbeddings/vectorsFastText.bin')
 print("Number of word embeddings in the model: " + str(len(model.words)))
 #print(model.words) # list of words in dictionary
 print("get the vector of word 'patient': " + str(model['patient']))      # get the vector of a word
@@ -54,12 +54,7 @@ targets = ['tamoxifen', 'antiestrogen', 'fulvestrant', 'palbociclib','abemacicli
            'hemoglobin', 'platelets',
            'bronchi', 'trachea', 'bronchus', 'breast']
 
-targets = ['fulvestrant', 'palbociclib','breast',
-           'nivolumab', 'cisplatin', 'lung',
-           'oxaliplatin', 'leucovorin', 'fluorouracil', 'colon',
-           'mitomycin', 'bladder',
-           'temozolamide', 'glioblastoma',
-           'ipilimumab', 'melanoma']
+
 
 #get the word vectors of these words
 X_target=[]

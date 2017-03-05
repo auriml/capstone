@@ -130,14 +130,12 @@ def run_classifier(set_size):
         confusion_table = pd.DataFrame({"True Positives": [truePos.y_true.size,FalseNeg.y_true.size], "True Negatives": [FalsePos.y_true.size, trueNeg.y_true.size]}, index=["Predicted Positives","Predicted Negatives"])
         print(confusion_table)
 
-        #cohen's Kappa agreement (for imbalanced data)
+        #cohen's Kappa agreement
         from sklearn.metrics  import cohen_kappa_score
         kappa = cohen_kappa_score(df_confVal.y_true, df_confVal.y_pred)
         print("kappa =" + str(kappa) )
 
-        # from sklearn.metrics import confusion_matrix
-        # confusion = confusion_matrix(df_train.eligible, predicted)
-        # print(confusion)
+
 
         #classification report
         from sklearn.metrics import classification_report ,f1_score
@@ -174,7 +172,7 @@ for s in train_sizes:
 
 
 import plot as pl
-title =  "Learning Curves (FastText Classifier Model)"
+title =  "Learning_Curves_FastText_Classifier"
 
 pl.plot_learning_curve(title, train_sizes = train_sizes, logX=True,
                        test_scores_mean = test_scores_mean,test_scores_std = test_scores_std,

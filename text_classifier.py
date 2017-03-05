@@ -18,8 +18,8 @@ BASE_DIR = '.'
 VE_DIR = BASE_DIR + '/wordEmbeddings/'
 VE_FNAME = 'vectorsFastText.vec'
 TEXT_DATA_DIR = BASE_DIR + '/textData/'
-#TEXT_DATA_FNAME = 'labeledEligibilityFastText.csv'
-TEXT_DATA_FNAME = 'labeledEligibilitySample'
+TEXT_DATA_FNAME = 'labeledEligibility.csv'
+SAMPLE_TEXT_DATA_FNAME = 'labeledEligibilitySample'
 RESULT_DIR = BASE_DIR + '/classifiers/'
 RESULT_FNAME = 'model_custom_CNN'
 MAX_NB_WORDS = 20000
@@ -49,7 +49,7 @@ def run_classifier(size = None):
     print('Loading text dataset')
     path = ""
     if size: #load existing size file
-        path = os.path.join(TEXT_DATA_DIR, TEXT_DATA_FNAME + str(size) + '.csv')
+        path = os.path.join(TEXT_DATA_DIR, SAMPLE_TEXT_DATA_FNAME + str(size) + '.csv')
     else: #load full sample
         path = os.path.join(TEXT_DATA_DIR, TEXT_DATA_FNAME )
     df = pd.read_csv(path, sep='\t', header=None, names = ["eligible", "eligibility"])
@@ -108,17 +108,7 @@ def run_classifier(size = None):
         val = sequences_generator(series_sequences[test_index],cat_labels[test_index],MAX_SEQUENCE_LENGTH)
 
         i +=1
-        # split the data into a training set and a validation set
-        # indices = np.arange(data.shape[0])
-        # np.random.shuffle(indices)
-        # data = data[indices]
-        # labels = labels[indices]
-        # nb_validation_samples = int(VALIDATION_SPLIT * data.shape[0])
-        #
-        # x_train = data[:-nb_validation_samples]
-        # y_train = labels[:-nb_validation_samples]
-        # x_val = data[-nb_validation_samples:]
-        # y_val = labels[-nb_validation_samples:]
+
 
         print('Preparing embedding matrix.')
 
@@ -226,7 +216,7 @@ for s in train_sizes:
     test_scores_std.append(scoresV.std())
 
 import plot as pl
-title =  "Learning Curves CNN Classifier Model"
+title =  "Learning_Curves_CNN_Classifier"
 
 pl.plot_learning_curve(title, train_sizes = train_sizes, logX=True,
                        test_scores_mean = test_scores_mean,test_scores_std = test_scores_std,

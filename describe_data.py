@@ -5,7 +5,7 @@ import numpy as np
 BASE_DIR = '.'
 
 TEXT_DATA_DIR = BASE_DIR + '/textData/'
-TEXT_DATA_FNAME = 'labeledEligibilityFastText.csv'
+TEXT_DATA_FNAME = 'labeledEligibility.csv'
 
 path = os.path.join(TEXT_DATA_DIR, TEXT_DATA_FNAME)
 df = pd.read_csv(path, sep='\t', header=None, names = ["eligible", "eligibility"])
