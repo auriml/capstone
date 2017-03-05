@@ -20,8 +20,11 @@ sklearn                   0.0
 tensorflow-gpu            1.0.0                    
 Theano                    0.8.2                    
 ### Steps to Build the Models
-Note: Pregenerated sample files are available here  
+Note: Pregenerated subsample file with 1M samples is available for download in https://www.kaggle.com/auriml/eligibilityforcancerclinicaltrials  
+If the pregenerated dataset is used then proceed directly to step 2, otherwise, to build a new dataset from scratch proceed to step 0
 ## 0. Download clinical trial protocols:
+https://clinicaltrials.gov/ct2/results?term=neoplasm&type=Intr&show_down=Y
+Size of file: 1.28 GB
 ## 1. Preprocessing: 
 ### 1.1 Generate bigrams
 ### 1.2 Generate wordembedings 

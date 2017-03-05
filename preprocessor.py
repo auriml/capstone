@@ -330,16 +330,10 @@ def appendProcesssedFieldToCsv(source_csv = './textData/data.csv', fname = './te
 
 
 
-#generate bigrams
-print("Starting to generate bigrams")
-#sentences = MySentences(dataDirectory,bigrams=False)
-#bigram = generateBigrams(sentences)
-#bigram = Phrases.load("bigrams")
-#line = "I have myasthenia gravis and take trimethoprim sulfamethoxazole".split()
-#print(bigram[line])
+
 
 #extracts criteria by treatment and eligibility (replace bigrams)
-print("Starting to process eligibility criteria and extracts criteria sentences by treatment and eligibility (replace bigrams)")
+#print("Starting to process eligibility criteria and extracts criteria sentences by treatment and eligibility (replace bigrams)")
 #to_csv("./textData/data.csv", bigrams = bigram )
 
 #extracts criteria by  treatment, eligibility and conditions (replace bigrams)
@@ -347,11 +341,11 @@ print("Starting to process eligibility criteria and extracts criteria sentences 
 #CHOOSE: to_csv("./textData/dataWithConditions_no_bigrams.csv", bigrams = False, conditions = True )
 
 # nciNER for intervention_name field
-print("Starting to do NER for intervention_name using nciThesaurus ")
+#print("Starting to do NER for intervention_name using nciThesaurus ")
 #nciThesaurusNER(source_csv = './textData/data.csv', fname = './textData/intervention_index.csv' ,field = 'intervention_name')
 
 # append intervention_class to data
-print("Appending nci intervention classes to data")
+#print("Appending nci intervention classes to data")
 #appendProcesssedFieldToCsv(source_csv = './textData/dataWithConditions.csv', fname = './textData/dataWithInterventionClass.csv',  dic_csv ='./textData/intervention_index.csv', new_fieldName = 'intervention_class' , source_fieldName = 'intervention_name')
 
 
@@ -367,4 +361,30 @@ print("Starting to generate a file containing all criteria transformed in a uniq
 #CHOOSE: text2words_to_csv(dataDirectory, "./textData/words_data_no_bigrams.csv", bigrams = False)
 
 
+import sys, getopt
+# Read command line args
+myopts, args = getopt.getopt(sys.argv[1:],"b:l:w")
 
+###############################
+# o == option
+# a == argument passed to the o
+###############################
+for o, a in myopts:
+    if o == '-b':
+        #generate bigrams
+        print("Starting to generate bigrams")
+        dataDirectory = a
+        sentences = MySentences(dataDirectory,bigrams=False)
+        bigram = generateBigrams(sentences)
+        bigram = Phrases.load("bigrams")
+        line = "I have myasthenia gravis and take trimethoprim sulfamethoxazole".split()
+        print(bigram[line])
+    elif o == '-l':
+        #extracts criteria by  treatment, eligibility and conditions (replace bigrams)
+        print("Starting to process eligibility criteria and extracts criteria sentences by treatment, eligibility and conditions (replace bigrams)")
+        to_csv("./textData/dataWithConditions_no_bigrams.csv", bigrams = True, conditions = True )
+
+    elif o == '-w':
+        a=a
+    else:
+        print("Usage: %s [-b] <dataDirectory> [-w] <dataDirectory>" % sys.argv[0])
