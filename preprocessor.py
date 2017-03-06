@@ -349,41 +349,43 @@ def appendProcesssedFieldToCsv(source_csv = './textData/data.csv', fname = './te
 #print("Appending nci intervention classes to data")
 #appendProcesssedFieldToCsv(source_csv = './textData/dataWithConditions.csv', fname = './textData/dataWithInterventionClass.csv',  dic_csv ='./textData/intervention_index.csv', new_fieldName = 'intervention_class' , source_fieldName = 'intervention_name')
 
+if __name__ == "__main__":
+    # stuff only to run when not called via 'import' here
 
-import sys, getopt
-# Read command line args
-myopts, args = getopt.getopt(sys.argv[1:],"b:lw")
+    import sys, getopt
+    # Read command line args
+    myopts, args = getopt.getopt(sys.argv[1:],"b:lw")
 
-###############################
-# o == option
-# a == argument passed to the o
-###############################
-for o, a in myopts:
-    if o == '-b':
-        #generate bigrams
-        print("Starting to generate bigrams")
-        dataDirectory = a
-        sentences = MySentences(dataDirectory,bigrams=False)
-        bigram = generateBigrams(sentences)
-        bigram = Phrases.load("bigrams")
-        line = "I have myasthenia gravis and take trimethoprim sulfamethoxazole".split()
-        print(bigram[line])
-    elif o == '-l':
-        #extracts criteria by  treatment, eligibility and conditions (replace bigrams)
-        print("Starting to process eligibility criteria and extracts criteria sentences by treatment, eligibility and conditions (replace bigrams)")
-        to_csv("./textData/dataWithConditions.csv", bigrams = True, conditions = True )
+    ###############################
+    # o == option
+    # a == argument passed to the o
+    ###############################
+    for o, a in myopts:
+        if o == '-b':
+            #generate bigrams
+            print("Starting to generate bigrams")
+            dataDirectory = a
+            sentences = MySentences(dataDirectory,bigrams=False)
+            bigram = generateBigrams(sentences)
+            bigram = Phrases.load("bigrams")
+            line = "I have myasthenia gravis and take trimethoprim sulfamethoxazole".split()
+            print(bigram[line])
+        elif o == '-l':
+            #extracts criteria by  treatment, eligibility and conditions (replace bigrams)
+            print("Starting to process eligibility criteria and extracts criteria sentences by treatment, eligibility and conditions (replace bigrams)")
+            to_csv("./textData/dataWithConditions.csv", bigrams = True, conditions = True )
 
-        #generate labeled criteria with FastText format
-        print("Generate labeled criteria from processed data with FastText format")
-        toFastText_format(source_csv = './textData/dataWithConditions.csv', fname = "./textData/labeledEligibility.csv",labeledField = "eligible")
-        #toFastText_format(source_csv = './textData/dataWithConditions.csv', fname = "./textData/labeledInterventionFastText.csv", labeledField = "intervention_name", otherFields = ["condition","eligibility", "eligible" ])
-        #toFastText_format(source_csv = './textData/dataWithInterventionClass.csv', fname = "./textData/labeledInterventionClassFastText.csv", labeledField = "intervention_class", otherFields = ["condition","eligibility", "eligible" ])
+            #generate labeled criteria with FastText format
+            print("Generate labeled criteria from processed data with FastText format")
+            toFastText_format(source_csv = './textData/dataWithConditions.csv', fname = "./textData/labeledEligibility.csv",labeledField = "eligible")
+            #toFastText_format(source_csv = './textData/dataWithConditions.csv', fname = "./textData/labeledInterventionFastText.csv", labeledField = "intervention_name", otherFields = ["condition","eligibility", "eligible" ])
+            #toFastText_format(source_csv = './textData/dataWithInterventionClass.csv', fname = "./textData/labeledInterventionClassFastText.csv", labeledField = "intervention_class", otherFields = ["condition","eligibility", "eligible" ])
 
-    elif o == '-w':
-        #generate plain words file needed for wordembeddings
-        print("Starting to generate a file containing all criteria transformed in a unique sequence of utf8  words separated by spaces ")
-        text2words_to_csv(dataDirectory, "./textData/words_data.csv", bigrams = True)
+        elif o == '-w':
+            #generate plain words file needed for wordembeddings
+            print("Starting to generate a file containing all criteria transformed in a unique sequence of utf8  words separated by spaces ")
+            text2words_to_csv(dataDirectory, "./textData/words_data.csv", bigrams = True)
 
 
-    else:
-        print("Usage: %s [-b] <dataDirectory> [-l][-w] " % sys.argv[0])
+        else:
+            print("Usage: %s [-b] <dataDirectory> [-l][-w] " % sys.argv[0])

@@ -35,8 +35,10 @@ Size of folder "search_result": 1.28 GB
 ```python preprocessor.py -w ```
 ```python fasttext_word_embeddings.py```
 ##### 1.3.1 Using Gensim
-```python gensim_word_embeddings.py -w '<pathTo>/search_result/'```
-## 2. Train and evaluate the models
+```python gensim_word_embeddings.py -i '<pathTo>/search_result/'```
+To visualize them using the TensorBoard (https://www.tensorflow.org/versions/master/how_tos/embedding_viz/) execute this script to produce the files in tensor format: 
+```python word2vec2tensor.py --input wordEmbeddings/vectorsGensim_cbow.bin --output word2vec2tensor ```
+## 2. Train and evaluate the text classifier models
 ## 2.1 FastText classifier
 ### 2.1.1 Run cross-validation using sample sizes = [1000, 10000, 100000, 1000000]
 Make sure that exists the file ./textData/labeledEligibility.csv

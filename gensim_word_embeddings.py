@@ -9,19 +9,19 @@ from preprocessor import MySentences
 from num2words import num2words
 import re
 
-fname = "./wordEmbeddings/vectorsGensim.bin"
+fname = "./wordEmbeddings/vectorsGensim_cbow.bin"
 dataDirectory  =  '/Users/aureliabustos/Downloads/search_result/'
 
 import sys, getopt
 # Read command line args
-myopts, args = getopt.getopt(sys.argv[1:],"w")
+myopts, args = getopt.getopt(sys.argv[1:],"i:")
 
 ###############################
 # o == option
 # a == argument passed to the o
 ###############################
 for o, a in myopts:
-    if o == '-w':
+    if o == '-i':
         print("Starting to generate word embeddings using Gensim and bigrams")
         dataDirectory = a
         logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
@@ -29,8 +29,10 @@ for o, a in myopts:
         bigram = Phrases.load("bigrams")
         print("Starting to train word embeddings")
         sentences = MySentences(dataDirectory) # a memory-friendly iterator
-        model = gensim.models.Word2Vec(sentences, min_count=5)
+        model = gensim.models.Word2Vec(sentences, min_count=5, sg=0)
+        #model = gensim.models.Word2Vec(bigram[sentences], min_count=5, sg=1)
         model.save(fname)
+        del model
         print("end")
         print("Loading embedding model")
         model = gensim.models.Word2Vec.load(fname)
@@ -43,9 +45,11 @@ for o, a in myopts:
         print(model.doesnt_match("nivolumab ipilimumab pembrolizumab chemotherapy".split()) )
         print("Most similar words to 'day'? ")
         print(model.most_similar('day'))
+        print("Tamoxifen is used to treat breast cancer as X is used to treat prostate cancer? ")
+        print(model.wv.most_similar_cosmul(positive=['prostate', 'tamoxifen'], negative=['breast']))
 
     else:
-        print("Usage: %s [-w] <dataDirectory> " % sys.argv[0])
+        print("Usage: %s [-i] <dataDirectory> " % sys.argv[0])
 
 
 

@@ -2,3 +2,7 @@
 *
 # Except this file
 !fastText_cluster_words.txt
+!vectorsGensim_cbow.bin
+!vectorsGensim_skipgram.bin
+!vectorsFastText.bin
+!vectorsFastText.vec
