@@ -98,3 +98,5 @@ apache-solr-4.0-2012-02-29_09-07-30
 MANIFEST.MF
 *.class
 .idea
+/word_space_visualization.py
+/evaluate.py
