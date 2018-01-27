@@ -25,9 +25,9 @@ RESULT_FNAME = 'model_custom_CNN'
 MAX_NB_WORDS = 20000
 EMBEDDING_DIM = 100
 VALIDATION_SPLIT = 0.2
+MAX_SEQUENCE_LENGTH = 1000
 
 
-#classifier = load_model(filepath= RESULT_DIR + RESULT_FNAME +'2100')
 
 def sequences_generator(seq, lab, max_sequence_length):
     my_list_len = len(lab)
@@ -91,7 +91,7 @@ def run_classifier(size = None):
 
 
     #MAX_SEQUENCE_LENGTH = np.max(np.array([len(j) for j in sequences]))
-    MAX_SEQUENCE_LENGTH = 1000
+
 
     # split the data into a training set and a validation set
     from sklearn.model_selection import StratifiedShuffleSplit

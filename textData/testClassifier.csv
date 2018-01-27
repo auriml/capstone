@@ -10,4 +10,41 @@ __label__1	in situ breast cancer and pemetrexed
 __label__1	bevacizumab and patients who has had any event of thrombosis
 __label__0	capecitabine and colon cancer
 __label__0	lapatinib and breast cancer and brain metastasis
-__label__1  pertuzumab and breast cancer and brain metastasis
+__label__0	trametinib in melanoma with brain metastases
+__label__0	carboplatin and ovarian cancer as first line treatment
+__label__0	paclitaxel and patients with breast cancer overexpressing HER2
+__label__1	pertuzumab and patients with triple negative breast cancer
+__label__1	pertuzumab and breast cancer and brain metastasis
+__label__0	Dexamethasone and multiple myeloma diagnosis
+__label__1	Dexamethasone and multiple myeloma diagnosis and use of any investigational drug within thirty days prior to enrolment in the trial
+__label__0	Sipuleucel-T any other systemic therapy for prostate cancer including secondary hormonal therapies such as megestrol acetate megace diethylstilbestrol_des and ketoconazole
+__label__1	MRI Scanning and severe claustrophobia anxiety
+__label__1	Rituximab and non hodgkin lymphoma nhl diagnosis and serious accompanying disorder or impaired organ function
+__label__0	Albumin-Bound Paclitaxel stage iii squamous cell carcinoma of the larynx diagnosis
+__label__1	Naloxone and cancer diagnosis in women of child bearing potential defined as all women physiologically capable of becoming pregnant
+__label__1	Cetuximab and carcinoma squamous cell of head and neck diagnosis and cardiac failure new york heart association nyha class iii or iv
+__label__0	Cetuximab and carcinoma squamous cell of head and neck diagnosis
+__label__1	Maytansine in patients who are currently receiving other anti cancer agents
+__label__0	Lapatinib and neoplasms breast diagnosis
+__label__1	Tivozanib and recurrent fallopian tube cancer diagnosis and psychiatric disorder or altered mental status precluding informed consent
+__label__1	BKM120 and esophageal cancer diagnosis and patient has poorly controlled diabetes mellitus
+__label__1	Vincristine . stage ii follicular lymphoma diagnosis and has an active infection requiring intravenous antibiotic therapy
+__label__1	Obinutuzumab in lymphocytic leukemia  and evidence of significant uncontrolled concomitant disease
+__label__0	Abiraterone Acetate and prostate cancer diagnosis
+__label__1	Everolimus and untreated central nervous system metastases
+__label__1	Paclitaxel and stage iiia breast cancer diagnosis and current ongoing treatment with full dose warfarin
+__label__0	Paclitaxel and stage iiia breast cancer diagnosis
+__label__1	Cyclosporine and nodal marginal zone cell lymphoma diagnosis and patients who are human immunodeficiency virus hiv positive
+__label__1	Gemcitabine and non small cell lung nsclc diagnosis and untreated brain metastases
+__label__0	Gemcitabine and non small cell lung nsclc diagnosis
+__label__0	Gemcitabine and cholangiocarcinoma
+__label__1	Gemcitabine and melanoma
+__label__1	Sirolimus and diffuse large cell lymphoma diagnosis and patients with active bacterial or fungal infections unresponsive to medical therapy
+__label__1	Sunitinib and  diarrhea greater_than equal_than grade two by ctcae
+__label__1	Etoposide phosphate in atypical_teratoid rhabdoid tumor diagnosis and known history of uncontrolled sleep_apnea syndrome or other conditions that could result in excessive_daytime sleepiness such as severe chronic obstructive pulmonary disease or requirement for supplemental oxygen
+__label__1	Thalidomide and diffuse mixed cell lymphoma diagnosis and chronic or current infectious disease requiring systemic antibiotics antifungal and active hepatitis c
+__label__0	AP23573 in soft tissue sarcoma
+__label__1	Staurosporine and fltthree tyrosine kinase domain point mutation diagnosis and congenital long qt syndrome or known family history of long qt syndrome
+__label__1	Everolimus in myeloma diagnosis and psychiatric illness
+__label__1	Trastuzumab in breast carcinoma with indeterminate or negative hertwo status
+__label__0	Staurosporine and fltthree tyrosine kinase domain point mutation diagnosis
