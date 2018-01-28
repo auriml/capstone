@@ -200,14 +200,16 @@ def run_classifier(size = None):
 
 
 
-
-#scoresT, scoresV = run_classifier()
+print("training fullset")
+scoresT, scoresV = run_classifier()
+print("finished training fullset")
 train_sizes = [1000, 10000, 100000, 1000000]
 #train_sizes = []
 train_scores_mean = []
 train_scores_std = []
 test_scores_mean = []
 test_scores_std = []
+print("training models increasing samples to build learning curves")
 for s in train_sizes:
     scoresT, scoresV = run_classifier(s)
     train_scores_mean.append(scoresT.mean())
