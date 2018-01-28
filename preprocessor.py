@@ -302,7 +302,7 @@ def toFastText_format(source_csv = './textData/dataWithCondition.csv', fname = "
 
     separator = ' . '
 
-    fd = open(fname,'a')
+    fd = open(fname,'a', encoding='utf8')
     for row in df.iterrows():
         string = ""
         vals = []
