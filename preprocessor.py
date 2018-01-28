@@ -10,8 +10,8 @@ import pandas as pd
 
 
 
-dataDirectory  =  '/Users/aureliabustos/Downloads/search_result/'
-#dataDirectory  =  './sampleData/'
+#dataDirectory  =  '/Users/aureliabustos/Downloads/search_result/'
+dataDirectory  =  './sampleData/'
 
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
