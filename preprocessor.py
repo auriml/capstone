@@ -157,7 +157,7 @@ def text2words_to_csv(dataDirectory, fname, bigrams = False):
         bigram = Phrases.load("bigrams")
     for filename in os.listdir(dataDirectory):
         if filename.endswith(".xml"):
-            fd = open(fname,'a')
+            fd = open(fname,'a', encoding='utf8')
             path = os.path.join(dataDirectory, filename)
             eligibility = retrieve_info(path, ['eligibility'])
             if eligibility.__len__() > 0:
@@ -255,7 +255,7 @@ def nciThesaurusNER(source_csv = './textData/data.csv', fname = './textData/inte
      # dictionary mapping label name to numeric id
      values = df[field].unique()
      dictIndex = {k: v for v, k in enumerate(values)}
-     fd = open(fname,'a')
+     fd = open(fname,'a', encoding='utf8')
      fd.write("key" + '\t' + "index"+ '\t' + "value" + '\n')
      for k in dictIndex:
          keys = re.compile(r'\(|\)').split(k)
