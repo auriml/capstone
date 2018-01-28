@@ -11,7 +11,7 @@ from keras.layers import Dense, Input, Flatten
 from keras.layers import Conv1D, MaxPooling1D, Embedding
 from keras.models import Model
 from keras.models import load_model
-from keras.callbacks import ModelCheckpoint, ReduceLROnPlateou
+from keras.callbacks import ModelCheckpoint, ReduceLROnPlateaou
 
 import sys
 
