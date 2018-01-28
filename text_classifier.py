@@ -180,7 +180,7 @@ def run_classifier(size = None):
         print("Test index lenth:", len(test_index))
         c = ModelCheckpoint(os.path.join(RESULT_DIR, RESULT_FNAME + str(size)), monitor='val_loss', verbose=0, save_best_only=False, save_weights_only=False, mode='auto', period=1)
         model.fit_generator(train, validation_data=val, nb_val_samples= len(test_index),
-                  nb_epoch=10, samples_per_epoch=len(train_index), callbacks = c)
+                  nb_epoch=10, samples_per_epoch=len(train_index), callbacks = [c])
         #for x_train, y_train in train:
             #y_train = y_train.reshape((-1, 1))
         #    model.fit(x_train, y_train, nb_epoch=2, batch_size=128)
