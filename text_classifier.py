@@ -177,13 +177,14 @@ def run_classifier(size = None):
         #          nb_epoch=2, batch_size=128)
         print("Train index lenth:", len(train_index))
         print("Test index lenth:", len(test_index))
+        c = keras.callbacks.ModelCheckpoint(os.path.join(RESULT_DIR, RESULT_FNAME + str(size)), monitor='val_loss', verbose=0, save_best_only=False, save_weights_only=False, mode='auto', period=1)
         model.fit_generator(train, validation_data=val, nb_val_samples= len(test_index),
-                  nb_epoch=10, samples_per_epoch=len(train_index))
+                  nb_epoch=10, samples_per_epoch=len(train_index), callbacks = c)
         #for x_train, y_train in train:
             #y_train = y_train.reshape((-1, 1))
         #    model.fit(x_train, y_train, nb_epoch=2, batch_size=128)
 
-        model.save(os.path.join(RESULT_DIR, RESULT_FNAME + str(size)))
+        #model.save(os.path.join(RESULT_DIR, RESULT_FNAME + str(size)))
         results = model.evaluate_generator(val, val_samples= len(test_index))
         dicVal = dict(zip(model.metrics_names, results))
         results = model.evaluate_generator(train, val_samples= len(train_index))
