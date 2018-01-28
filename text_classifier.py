@@ -11,6 +11,7 @@ from keras.layers import Dense, Input, Flatten
 from keras.layers import Conv1D, MaxPooling1D, Embedding
 from keras.models import Model
 from keras.models import load_model
+from keras.callbacks import ModelCheckpoint, ReduceLROnPlateou
 
 import sys
 
@@ -177,7 +178,7 @@ def run_classifier(size = None):
         #          nb_epoch=2, batch_size=128)
         print("Train index lenth:", len(train_index))
         print("Test index lenth:", len(test_index))
-        c = keras.callbacks.ModelCheckpoint(os.path.join(RESULT_DIR, RESULT_FNAME + str(size)), monitor='val_loss', verbose=0, save_best_only=False, save_weights_only=False, mode='auto', period=1)
+        c = ModelCheckpoint(os.path.join(RESULT_DIR, RESULT_FNAME + str(size)), monitor='val_loss', verbose=0, save_best_only=False, save_weights_only=False, mode='auto', period=1)
         model.fit_generator(train, validation_data=val, nb_val_samples= len(test_index),
                   nb_epoch=10, samples_per_epoch=len(train_index), callbacks = c)
         #for x_train, y_train in train:
