@@ -299,6 +299,7 @@ def toFastText_format(source_csv = './textData/dataWithCondition.csv', fname = "
     # dictionary mapping label name to numeric id
     labels_values = df[labeledField].unique()
     labels_index = {k: v for v, k in enumerate(labels_values)}
+    print(labels_index)
 
     separator = ' . '
 
