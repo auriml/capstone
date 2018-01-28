@@ -118,7 +118,7 @@ def run_classifier(size = None):
         print('Indexing word vectors.')
 
         embeddings_index = {}
-        f = open(os.path.join(VE_DIR, VE_FNAME))
+        f = open(os.path.join(VE_DIR, VE_FNAME),  encoding='utf8')
         for line in f:
             values = line.split()
             word = values[0]
