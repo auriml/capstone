@@ -194,7 +194,7 @@ def to_csv(fname, bigrams = False, conditions=False,  fields=['eligibility','int
 
 
             if criteria.__len__() > 0:
-                fd = open(fname,'a')
+                fd = open(fname,'a', encoding='utf8')
                 if keys is False:
                     string = 'eligible'+ '\t' + 'intervention_name' + '\t' + 'eligibility'
                     fd.write(string + '\n')
