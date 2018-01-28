@@ -16,7 +16,7 @@ data_test =  "./textData/testClassifier.csv"
 df_test = pd.read_csv(data_test, sep='\t', header=None, names = ["y", "x"])
 
 
-classifier = load_model(filepath= RESULT_DIR + RESULT_FNAME +'2100')
+classifier = load_model(filepath= RESULT_DIR + RESULT_FNAME +'None')
 # vectorize the text samples into a 2D integer tensor
 tokenizer = Tokenizer(nb_words=MAX_NB_WORDS)
 tokenizer.fit_on_texts(df_test.x.apply(str))
