@@ -295,7 +295,7 @@ def nciThesaurusNER(source_csv = './textData/data.csv', fname = './textData/inte
 def toFastText_format(source_csv = './textData/dataWithCondition.csv', fname = "./textData/dataFastText.csv" , labeledField = "eligible", otherFields = ["condition","intervention_name", "eligibility" ]):
     #PRECONDITION: it requires the list of all possible values of labeledField in the data
     print('Loading source dataset')
-    df = pd.read_csv(source_csv, sep='\t', header=0)
+    df = pd.read_csv(source_csv, sep='\t', header=0, dtype=str)
     # dictionary mapping label name to numeric id
     labels_values = df[labeledField].unique()
     labels_index = {k: v for v, k in enumerate(labels_values)}
