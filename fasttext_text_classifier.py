@@ -1,10 +1,28 @@
-import fasttext
 import os
 import pandas as pd
 import numpy as np
+from fastText import train_supervised
+from fastText import load_model
+import sys
+import os
 
 
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('--debug',action='store_true',help='Wait for remote debugger to attach')
+a = parser.parse_args()
 
+if a.debug:
+	import ptvsd
+	print("Waiting for remote debugger...")
+	# Allow other computers to attach to ptvsd at this IP address and port, using the secret
+	ptvsd.enable_attach("", address = ('0.0.0.0', 3000))
+	# Pause the program until a remote debugger is attached
+	ptvsd.wait_for_attach()
+    #print("Remote debugger connected: resuming execution.")
+
+sys.path.append("../capstone")
+os.chdir("../capstone")
 
 VALIDATION_SPLIT = 0.2
 TRAIN_MODEL = True
@@ -45,21 +63,21 @@ def run_classifier(set_size):
         classifier = None
         if TRAIN_MODEL == False:
             print("starting to load model")
-            classifier = fasttext.load_model(classifier_fname +'.bin')
+            classifier = load_model(classifier_fname +'.bin')
         else:
             print("start to train classifier model")
             #classifier = fasttext.supervised(data_train, classifier_fname, pretrained_vectors = './wordEmbeddings/vectorsFastText.vec', epoch= 100)
             #classifier = fasttext.supervised(data_train, classifier_fname, epoch= 100, silent = 0, thread=4, pretrained_vectors = './wordEmbeddings/vectorsFastText_skipgram.vec',  )
-            classifier = fasttext.supervised(data_train, classifier_fname, epoch= 100, silent = 0, thread=4 , lr = 0.1)
-
+            classifier = train_supervised(data_train, epoch= 100, verbose=1, thread=32 )
+            classifier.save_model(classifier_fname +'.bin')
             print("end")
 
 
-
+        
         result = classifier.test(data_val)
-        print('P@1:', result.precision)
-        print('R@1:', result.recall )
-        print('Number of examples:', result.nexamples)
+        print('P@1:', result[1])
+        print('R@1:', result[2])
+        print('Number of examples:', result[0])
 
         texts = [
             'neuropsychiatric history or altered mental status',
@@ -75,17 +93,17 @@ def run_classifier(set_size):
             'capecitabine and breast cancer and brain metastasis',
             'capecitabine and colon cancer',
             'lapatinib and breast cancer and brain metastasis',
-            'pertuzumab and breast cancer and brain metastasis',
+            'pertuzumab and breast cancer and brain metastasis'
 
         ]
 
         # predict with the probability
-        labels = classifier.predict_proba(texts)
-        print(labels)
+        #labels = classifier.predict_proba(texts)
+        #print(labels)
         result = classifier.test(data_test)
-        print(result.precision) # Precision at one
-        print(result.recall)    # Recall at one
-        print(result.nexamples) # Number of test examples
+        print('P@1:', result[1])
+        print('R@1:', result[2])
+        print('Number of examples:', result[0])
 
         #k = 1
         # print(classifier.labels)                  # List of labels
@@ -108,31 +126,33 @@ def run_classifier(set_size):
         #print(classifier.predict_proba(texts, k)) # Predict the most likely label include their probability
 
         #Confusion matrix
-        classifier =  fasttext.load_model(classifier_fname +'.bin')
+        classifier =  load_model(classifier_fname +'.bin')
         df_val = pd.read_csv(data_val, sep='\t', header=0, names = ["index", "y", "x"])
 
-
-        predicted =  pd.Series(np.array(classifier.predict(df_val.x)).flatten())
-        predictedTrain = pd.Series(np.array(classifier.predict(df_train.eligibility)).flatten())
+        predicted = classifier.predict(list(df_val.x.values))
+        predictedTrain = classifier.predict(list(df_train.eligibility.values))
+        predicted =  np.array(predicted[0]).flatten()
+        predictedTrain = np.array(predictedTrain[0]).flatten()
 
         d = {"y_true" : df_val.y, "y_pred" : predicted}
         df_confVal = pd.DataFrame(d)
+        print(df_confVal.head())
 
 
 
 
 
-        truePos =  df_confVal.loc[lambda df: (df.y_true == "__label__0") & (df.y_true ==  df.y_pred), :]
-        FalseNeg =  df_confVal.loc[lambda df: (df.y_true == "__label__0") & (df.y_true !=  df.y_pred), :]
-        trueNeg =  df_confVal.loc[lambda df: (df.y_true == "__label__1") & (df.y_true ==  df.y_pred), :]
-        FalsePos =  df_confVal.loc[lambda df: (df.y_true == "__label__1") & (df.y_true !=  df.y_pred), :]
+        truePos =  df_confVal.loc[lambda df: (df_confVal.y_true == "__label__0") & (df_confVal.y_true ==  df_confVal.y_pred), :]
+        FalseNeg =  df_confVal.loc[lambda df: (df_confVal.y_true == "__label__0") & (df_confVal.y_true !=  df_confVal.y_pred), :]
+        trueNeg =  df_confVal.loc[lambda df: (df_confVal.y_true == "__label__1") & (df_confVal.y_true ==  df_confVal.y_pred), :]
+        FalsePos =  df_confVal.loc[lambda df: (df_confVal.y_true == "__label__1") & (df_confVal.y_true !=  df_confVal.y_pred), :]
 
         confusion_table = pd.DataFrame({"True Positives": [truePos.y_true.size,FalseNeg.y_true.size], "True Negatives": [FalsePos.y_true.size, trueNeg.y_true.size]}, index=["Predicted Positives","Predicted Negatives"])
         print(confusion_table)
 
         #cohen's Kappa agreement
         from sklearn.metrics  import cohen_kappa_score
-        kappa = cohen_kappa_score(df_confVal.y_true, df_confVal.y_pred)
+        kappa = cohen_kappa_score(list(df_confVal.y_true.values), list(df_confVal.y_pred.values))
         print("kappa =" + str(kappa) )
 
 
@@ -140,11 +160,11 @@ def run_classifier(set_size):
         #classification report
         from sklearn.metrics import classification_report ,f1_score
         target_names = ['Eligible', 'Not elegible']
-        report = classification_report(df_confVal.y_true, df_confVal.y_pred, target_names=target_names)
+        report = classification_report(list(df_confVal.y_true.values), list(df_confVal.y_pred.values), target_names=target_names)
         print(report)
-        f1Val =  f1_score(df_confVal.y_true, df_confVal.y_pred, pos_label='__label__0', average='macro')
+        f1Val =  f1_score(list(df_confVal.y_true.values), list(df_confVal.y_pred.values), pos_label='__label__0', average='macro')
         scoresVal.append(f1Val)
-        f1Train =  f1_score(df_train.eligible, predictedTrain, pos_label='__label__0', average='macro')
+        f1Train =  f1_score(list(df_train.eligible.values), predictedTrain, pos_label='__label__0', average='macro')
         scoresTrain.append(f1Train)
 
 
@@ -157,8 +177,9 @@ def run_classifier(set_size):
 
 
 
-
+#run_classifier(None)
 train_sizes = [1000, 10000, 100000, 1000000]
+
 train_scores_mean = []
 train_scores_std = []
 test_scores_mean = []
@@ -171,6 +192,9 @@ for s in train_sizes:
     test_scores_std.append(scoresV.std())
 
 
+
+import matplotlib
+matplotlib.use('Agg')
 import plot as pl
 title =  "Learning_Curves_FastText_Classifier"
 

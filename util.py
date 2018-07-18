@@ -2,9 +2,10 @@ __author__ = 'aureliabustos'
 
 
 import numpy as np
+import os
 
 
-
+cwd = os.getcwd()
 data =  "./textData/labeledEligibility.csv"
 
 
@@ -30,6 +31,26 @@ def generate_small_set(set_size =None , fname = None):
     import pandas as pd
     print('Loading text dataset')
     df = pd.read_csv(data, sep='\t', header=None, names = ["eligible", "eligibility"])
+    print(df.describe())
+    #balance labels
+    # Apply the random under-sampling
+
+    rus = balanced_subsample(df.eligible, size=set_size)
+    df = df.iloc[rus,:]
+    print("sample after under-sampling: " )
+    print(df.describe() )
+    if set_size != None:  #write subsample but not full sample
+        fname = fname + str(set_size) + '.csv'
+        df.to_csv(sep='\t', path_or_buf=fname, index=False, header = False)
+    return df
+
+
+def generate_small_set_labeled_sentence_embeddings(set_size =None , fname = None):
+    import pandas as pd
+    print('Loading sentence embeddings dataset')
+    data_path = os.path.join(cwd, "/textData/labeledSentenceVectorsFastText.csv")
+    print(data_path)
+    df = pd.read_csv(cwd + data_path, sep='\t', header=None, names = ["eligible", "eligibility_embeddings"])
     print(df.describe())
     #balance labels
     # Apply the random under-sampling
