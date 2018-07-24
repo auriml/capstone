@@ -2,7 +2,7 @@
 Source code to train and validate two text classifier models - based on FastText vs Deep Learning using a 1-D Convolutional Neural Network with pretrained wordembeddings - on the corpus of cancer clinical trial protocols published in clinicaltrial.gov. The models classifies short free-text sentences (describing clinical information like medical history, concomitant medication, type and features of tumor, cancer therapy etc.)  as eligible or not eligible criterion to volunteer in clinical trials.  
 Both models are evaluated using cross-validation with k-folds = 5 on incremental sample sizes (1K, 10K, 100K, 1M samples) and on the largest balanced set (using undersampling) with 4.01 M classified samples available (from a total of 6 M samples) . 
 
-The report is available in CapstoneReport-MLNanodegree.pdf
+Read original paper: Bustos, A.; Pertusa, A.	Learning Eligibility in Cancer Clinical Trials Using Deep Neural Networks. Appl. Sci. 2018, 8, 1206. www.mdpi.com/2076-3417/8/7/1206
 ## Installation
 ### The following dependencies need to be installed
 gensim                    0.13.4.1            
